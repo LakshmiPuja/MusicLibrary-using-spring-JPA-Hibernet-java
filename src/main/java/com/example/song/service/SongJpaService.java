@@ -46,6 +46,7 @@ public Song updateSong(int songId, Song song){
         if (song.getLyricist() != null) newSong.setLyricist(song.getLyricist());
         if(song.getSinger() != null) newSong.setSinger(song.getSinger());
         if (song.getMusicDirector() != null) newSong.setMusicDirector(song.getMusicDirector());
+        songJR.save(newSong);
         return newSong; 
     }catch(Exception e){
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
